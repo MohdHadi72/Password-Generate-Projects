@@ -28,11 +28,8 @@ const symbols = "!/?[]{}+-_<>'@#$%^&*()~`.,|";
 
 
 
-
-
-
-
 SlideValue.textContent = inputRangeVal.value;
+
 inputRangeVal.addEventListener("input", ()=>{
     SlideValue.textContent = inputRangeVal.value;
     SlideValue.style.fontWeight = "bold";
@@ -74,3 +71,18 @@ function passwordGenerater(){
     PassBox.style.fontWeight = "bold";
     PassBox.style.paddingLeft = "2%";
 }
+
+
+
+genBtnVal.addEventListener("click", ()=>{
+    passwordGenerater()
+});
+
+
+copyIconVal.addEventListener("click", ()=>{     
+    if(PassBox.value != "" || PassBox.value.length >= 1){
+        navigator.clipboard.writeText(PassBox.value);
+        copyIconVal.innerText = "check";
+
+    }
+});
